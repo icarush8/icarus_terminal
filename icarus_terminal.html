@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icarus Terminal</title>
+  <style>
+    body {
+      background-color: black;
+      color: #cc0000;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      padding: 30px;
+      white-space: pre-wrap;
+    }
+
+    #terminal {
+      border-left: 4px solid #cc0000;
+      padding-left: 15px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+
+  <script>
+    const text = `
+>> Accessing Node: ICARUS_HATCH.exe
+>> Status: UNKNOWN ENTITY DETECTED
+>> Running Neural Integrity Check...
+>> Signal Stable. Memory Fragment Detected...
+
+"I didn’t ask to be born a Hargreeves.
+I was just a kid with a hoodie and a cracked screen,
+trying to ignore a world that never made sense...
+until it glitched."
+
+>> Initializing Perceptual Hack Protocol...
+>> Reality link: online.
+>> Data sync initiated...
+
+"I see it all now.
+The cameras, the signals, the lies.
+They thought I wouldn’t notice.
+They forgot the quiet ones are always watching."
+
+>> Identity Confirmed.
+>> Codename: Number Eight - The One in the System.
+>> System access: GRANTED
+
+"Touch my laptop and I’ll show you what a memory loop feels like.
+I'm not just the tech guy lol, you know? I am the glitch."
+
+>> ICARUS HATCH HARGREEVES ONLINE.`;
+    
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        document.getElementById("terminal").textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 20);
+      }
+    }
+
+    window.onload = type;
+  </script>
+</body>
+</html>
